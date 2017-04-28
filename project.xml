@@ -4,6 +4,8 @@
 	<meta title="AnExt" package="com.sample.anext" version="1.0.0" company="Company Name" />
 	<app main="Main" path="Export" file="AnExt" />
 	
+	<include path="ext/SetBrightness" />
+	
 	<source path="Source" />
 	
 	<haxelib name="openfl" />

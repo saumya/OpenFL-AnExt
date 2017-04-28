@@ -4,6 +4,8 @@ OpenFL Android Extension
  Lime	 `lime create openfl project MyProject`
  OpenFL	 `openfl create project MyProject` 
  
+ For writing extensions `lime create extension SetBrightness` 
+ 
 OpenFL [commands are a frontend][1] for Lime Commands. So all Lime commands can be called from OpenFL commands.
 
 Android Extension [Tutorial][2] reference

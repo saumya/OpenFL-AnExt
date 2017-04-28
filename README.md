@@ -6,6 +6,8 @@ OpenFL Android Extension
  
 OpenFL [commands are a frontend][1] for Lime Commands. So all Lime commands can be called from OpenFL commands.
 
+Android Extension [Tutorial][2] reference
+
 
 
 
@@ -14,4 +16,5 @@ OpenFL [commands are a frontend][1] for Lime Commands. So all Lime commands can 
 
 
 [1]: http://www.openfl.org/learn/docs/tools/
+[2]: https://player03.com/2014/08/09/openfl-extensions/
  

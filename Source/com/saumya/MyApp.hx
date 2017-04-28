@@ -31,7 +31,7 @@ class MyApp extends Sprite
 	public function init():Void{
 		_appBg = _utilAppBg.getBgShape(_parentWidth, _parentHeight, 0x00FF00);
 		addChild(_appBg);
-		
+		// add EventListeners
 		addEventListener(MouseEvent.CLICK, onClickAnyWhere);
 	}
 	

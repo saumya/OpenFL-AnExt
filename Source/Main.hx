@@ -1,8 +1,9 @@
 package;
 
-
+/*
 import camera.Camera;
 import camera.event.CameraEvent;
+*/
 
 import com.saumya.MyApp;
 
@@ -30,11 +31,10 @@ class Main extends Sprite {
 		this.removeEventListener(Event.ADDED_TO_STAGE, onTheStage);
 		addChild( new MyApp(this.stage.stageWidth, this.stage.stageHeight) );
 		
-		//checkCamera();
-		this.addEventListener(MouseEvent.CLICK, onTapTheStage);
+		//this.addEventListener(MouseEvent.CLICK, onTapTheStage);
 	}
 	
-	
+	/*
 	private function onTapTheStage(e:MouseEvent):Void{
 		checkCamera();
 	}
@@ -59,6 +59,6 @@ class Main extends Sprite {
         var jpegBytes:Bytes = e.GetImageData();
         addChild(new Bitmap(bitmapData));
     }
-	
+	*/
 	
 }

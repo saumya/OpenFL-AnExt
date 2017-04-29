@@ -6,7 +6,7 @@ buildscript {
 	}
 	
 	dependencies {
-		classpath 'com.android.tools.build:gradle::ANDROID_GRADLE_PLUGIN::'
+		classpath 'com.android.tools.build:gradle:::ANDROID_GRADLE_PLUGIN::'
 	}
 }
 

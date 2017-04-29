@@ -4,12 +4,12 @@
 	<meta title="AnExt" package="com.sample.anext" version="1.0.0" company="Company Name" />
 	<app main="Main" path="Export" file="AnExt" />
 	
-	<!-- <include path="ext/SetBrightness" /> -->
+	<include path="ext/SetBrightness" />
 	
-	
+	<!--
 	<include path="../2_extensions/extensionkit" />
 	<include path="../2_extensions/camera" />
-	
+	-->
 	
 	<source path="Source" />
 	

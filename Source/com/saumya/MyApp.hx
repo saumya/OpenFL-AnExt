@@ -32,7 +32,7 @@ class MyApp extends Sprite
 		_appBg = _utilAppBg.getBgShape(_parentWidth, _parentHeight, 0x00FF00);
 		addChild(_appBg);
 		// add EventListeners
-		addEventListener(MouseEvent.CLICK, onClickAnyWhere);
+		//addEventListener(MouseEvent.CLICK, onClickAnyWhere);
 	}
 	
 	private function onClickAnyWhere(e:MouseEvent):Void{

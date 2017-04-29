@@ -136,9 +136,11 @@ public class SetBrightness extends Extension {
 	// ref : https://player03.com/2014/08/09/openfl-extensions/
 	// =====================================================
 	public static void setBrightness(float brightness) {
+	    /*
 	    WindowManager.LayoutParams layout = Extension.mainActivity.getWindow().getAttributes();
 	    layout.screenBrightness = brightness;
 	    Extension.mainActivity.getWindow().setAttributes(layout);
+	    */
 	}
 	// =====================================================
 	

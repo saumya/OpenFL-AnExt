@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
+import android.view.WindowManager;
+
 
 /* 
 	You can use the Android Extension class in order to hook
@@ -38,13 +40,13 @@ import android.view.View;
 */
 public class SetBrightness extends Extension {
 	
-	
+	/*
 	public static int sampleMethod (int inputValue) {
 		
 		return inputValue * 100;
 		
 	}
-	
+	*/
 	
 	/**
 	 * Called when an activity you launched exits, giving you the requestCode 

@@ -13,7 +13,7 @@ import openfl.utils.JNI;
 
 class SetBrightness {
 	
-	
+	/*
 	public static function sampleMethod (inputValue:Int):Int {
 		
 		#if (android && openfl)
@@ -43,10 +43,12 @@ class SetBrightness {
 	#if (android && openfl)
 	private static var setbrightness_sample_method_jni = JNI.createStaticMethod ("org.haxe.extension.SetBrightness", "sampleMethod", "(I)I");
 	#end
+	*/
 
 	// ===========================================================
 	#if android
 	public static function setBrightness(brightness:Float):Void {
+		trace('Extension Called');
 	    setbrightness_set_brightness_jni(brightness);
 	}
 	private static var setbrightness_set_brightness_jni = JNI.createStaticMethod("org.haxe.extension.SetBrightness", "setBrightness", "(F)V");

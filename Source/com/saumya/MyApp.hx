@@ -39,6 +39,8 @@ class MyApp extends Sprite
 		_utilAppBg.changeColorOfShape(this._appBg, Math.round( Math.random() * (256 * 256 * 256) ));
 		//SetBrightness.setBrightness(0.5);
 		//SetBrightness.sampleMethod(3);
+		//MyExtension.mySampleMethod(0.5);
+		SetBrightness.setBrightness(0.5);
 	}
 	
 }

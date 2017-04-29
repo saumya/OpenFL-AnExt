@@ -1,5 +1,6 @@
 package;
 
+
 import camera.Camera;
 import camera.event.CameraEvent;
 
@@ -28,21 +29,24 @@ class Main extends Sprite {
 	private function onTheStage(e:Event):Void{
 		this.removeEventListener(Event.ADDED_TO_STAGE, onTheStage);
 		addChild( new MyApp(this.stage.stageWidth, this.stage.stageHeight) );
+		
 		//checkCamera();
 		this.addEventListener(MouseEvent.CLICK, onTapTheStage);
 	}
 	
+	
 	private function onTapTheStage(e:MouseEvent):Void{
 		checkCamera();
 	}
-
+	
 	private function checkCamera():Void{
 		
 		Camera.Initialize();
 		// Show this PNG over the top of the native camera view
         //Camera.SetCameraOverlayImage(Assets.getBitmapData("assets/img/camera-overlay.png"));
         // Take photo, limit max possible size to 1024x1024, JPEG quality 0.9
-        Camera.CapturePhoto(1024, 0.9);
+        //Camera.CapturePhoto(1024, 0.9);
+        Camera.CapturePhoto(1000, 0.9);
 		
         //
         stage.addEventListener(CameraEvent.PHOTO_CAPTURED, HandlePhotoCaptured);

@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.view.View;
 
 import android.view.WindowManager;
+import android.widget.Toast;
 
 
 /* 
@@ -142,7 +143,10 @@ public class SetBrightness extends Extension {
 	    WindowManager.LayoutParams layout = Extension.mainActivity.getWindow().getAttributes();
 	    layout.screenBrightness = brightness;
 	    Extension.mainActivity.getWindow().setAttributes(layout);
-	    
+
+	}
+	public static void testToast(int iVal){
+		Toast.makeText(Extension.mainContext, "OpenFL : Toast", 5000).show();
 	}
 	// =====================================================
 	

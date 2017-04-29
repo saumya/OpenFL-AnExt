@@ -47,11 +47,19 @@ class SetBrightness {
 
 	// ===========================================================
 	#if android
+
+	private static var setbrightness_set_brightness_jni = JNI.createStaticMethod("org.haxe.extension.SetBrightness", "setBrightness", "(F)V");
 	public static function setBrightness(brightness:Float):Void {
-		trace('Extension Called');
+		trace('Extension Called : setBrightness');
 	    setbrightness_set_brightness_jni(brightness);
 	}
-	private static var setbrightness_set_brightness_jni = JNI.createStaticMethod("org.haxe.extension.SetBrightness", "setBrightness", "(F)V");
+	
+	private static var testToastJNI = JNI.createStaticMethod("org.haxe.extension.SetBrightness", "testToast", "(I)V");	
+	public static function testToast(testVal:Int):Void{
+		trace('Extension Called : testToast : '+testVal);
+		testToastJNI(testVal);
+	}
+
 	#end
 	// ===========================================================
 	

@@ -1,5 +1,6 @@
 package;
 
+/*
 #if cpp
 import cpp.Lib;
 #elseif neko
@@ -9,7 +10,9 @@ import neko.Lib;
 #if (android && openfl)
 import openfl.utils.JNI;
 #end
+*/
 
+import lime.system.JNI;
 
 class SetBrightness {
 	
@@ -58,6 +61,7 @@ class SetBrightness {
 	public static function testToast(testVal:Int):Void{
 		trace('Extension Called : testToast : '+testVal);
 		testToastJNI(testVal);
+		//trace(testToastJNI);
 	}
 
 	#end

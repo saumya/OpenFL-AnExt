@@ -11,6 +11,7 @@ import android.view.View;
 
 import android.view.WindowManager;
 import android.widget.Toast;
+import android.util.Log;
 
 
 /* 
@@ -146,6 +147,7 @@ public class SetBrightness extends Extension {
 
 	}
 	public static void testToast(int iVal){
+		Log.d("INFO","testToast is called from SetBrightness.java");
 		Toast.makeText(Extension.mainContext, "OpenFL : Toast", 5000).show();
 	}
 	// =====================================================

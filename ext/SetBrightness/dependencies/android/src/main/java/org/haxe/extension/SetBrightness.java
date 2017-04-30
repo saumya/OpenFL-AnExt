@@ -147,8 +147,13 @@ public class SetBrightness extends Extension {
 
 	}
 	public static void testToast(int iVal){
-		Log.d("INFO","testToast is called from SetBrightness.java");
-		Toast.makeText(Extension.mainContext, "OpenFL : Toast", 5000).show();
+		Extension.callbackHandler.post(new Runnable() {
+			@Override public void run() {
+				Log.d("INFO","testToast is called from SetBrightness.java");
+			}
+		});
+		
+		//Toast.makeText(Extension.mainContext, "OpenFL : Toast", 5000).show();
 	}
 	// =====================================================
 	

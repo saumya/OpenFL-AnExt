@@ -10,6 +10,19 @@ OpenFL [commands are a frontend][1] for Lime Commands. So all Lime commands can 
 
 Android Extension [Tutorial][2] reference
 
+### Extension writing
+ 
+ Here are the steps to make an Android Extension
+```
+//create
+lime create extension SetBrightness
+lime create extension MyExtension
+//compile
+lime rebuild SetBrightness android
+lime rebuild MyExtension android
+//include in project by adding it in projecct.xml
+<include path="ext/SetBrightness" />
+```
 
 
 

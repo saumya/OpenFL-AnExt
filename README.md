@@ -32,6 +32,10 @@ lime rebuild MyExtension android
 <include path="ext/MyExtension" />
 ```
 
+### Notes
+
+The JNI [short code reference][3]
+
 
 
 
@@ -40,4 +44,5 @@ lime rebuild MyExtension android
 
 [1]: http://www.openfl.org/learn/docs/tools/
 [2]: https://player03.com/2014/08/09/openfl-extensions/
+[3]: https://docs.oracle.com/javase/7/docs/technotes/guides/jni/spec/types.html
  

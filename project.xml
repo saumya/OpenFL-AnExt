@@ -11,6 +11,8 @@
 	<include path="../2_extensions/extensionkit" />
 	<include path="../2_extensions/camera" />
 	-->
+	<include path="../2_extensions/1_mine/RayToast" />
+	
 	
 	<source path="Source" />
 	

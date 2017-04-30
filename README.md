@@ -29,6 +29,7 @@ lime rebuild MyExtension android
  - Include in project by adding it in project.xml
 ```
 <include path="ext/SetBrightness" />
+<include path="ext/MyExtension" />
 ```
 
 

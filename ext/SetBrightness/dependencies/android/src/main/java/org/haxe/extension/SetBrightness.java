@@ -140,20 +140,26 @@ public class SetBrightness extends Extension {
 	// ref : https://player03.com/2014/08/09/openfl-extensions/
 	// =====================================================
 	public static void setBrightness(float brightness) {
+	    Extension.callbackHandler.post(new Runnable() {
+	    	@Override public void run() {
+
+	    		Log.d("INFO","setBrightness is called from SetBrightness.java");
+	    		WindowManager.LayoutParams layout = Extension.mainActivity.getWindow().getAttributes();
+			    layout.screenBrightness = 0.5f;
+			    Extension.mainActivity.getWindow().setAttributes(layout);
+
+	    	}
+	    });
 	    
-	    WindowManager.LayoutParams layout = Extension.mainActivity.getWindow().getAttributes();
-	    layout.screenBrightness = brightness;
-	    Extension.mainActivity.getWindow().setAttributes(layout);
 
 	}
 	public static void testToast(int iVal){
 		Extension.callbackHandler.post(new Runnable() {
 			@Override public void run() {
 				Log.d("INFO","testToast is called from SetBrightness.java");
+				Toast.makeText(Extension.mainContext, "OpenFL : Toast", 5000).show();
 			}
 		});
-		
-		//Toast.makeText(Extension.mainContext, "OpenFL : Toast", 5000).show();
 	}
 	// =====================================================
 	

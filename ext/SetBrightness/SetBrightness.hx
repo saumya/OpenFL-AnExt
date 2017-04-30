@@ -53,16 +53,13 @@ class SetBrightness {
 
 	
 	public static function setBrightness(brightness:Float):Void {
-		trace('Extension Called : setBrightness');
 	    setbrightness_set_brightness_jni(brightness);
 	}
 	private static var setbrightness_set_brightness_jni = JNI.createStaticMethod("org.haxe.extension.SetBrightness", "setBrightness", "(F)V");
 	
 		
 	public static function testToast(testVal:Int):Void{
-		trace('Extension Called : testToast : '+testVal);
 		testToastJNI(testVal);
-		//setbrightness_set_brightness_jni(0.5);
 	}
 	private static var testToastJNI = JNI.createStaticMethod("org.haxe.extension.SetBrightness", "testToast", "(I)V");
 

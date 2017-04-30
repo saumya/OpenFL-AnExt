@@ -13,14 +13,21 @@ Android Extension [Tutorial][2] reference
 ### Extension writing
  
  Here are the steps to make an Android Extension
+ 
+ - Create
 ```
-//create
 lime create extension SetBrightness
 lime create extension MyExtension
-//compile
+```
+ 
+ - Compile
+```
 lime rebuild SetBrightness android
 lime rebuild MyExtension android
-//include in project by adding it in projecct.xml
+```
+ 
+ - Include in project by adding it in project.xml
+```
 <include path="ext/SetBrightness" />
 ```
 

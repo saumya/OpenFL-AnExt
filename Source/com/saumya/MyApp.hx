@@ -42,7 +42,9 @@ class MyApp extends Sprite
 		//SetBrightness.testToast(2);
 		//RayToast.testToast();
 		
-		RayToast.toastMessage( "Hello from OpenFL "+e.toString() );
+		//RayToast.toastMessage( "Hello from OpenFL : "+ Date.now() );
+		var s:String = RayToast.sendAndGetBackMessage( "Hello from OpenFL : " + Date.now() );
+		trace('Returned Message :'+s);
 	}
 	
 }

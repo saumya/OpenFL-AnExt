@@ -18,7 +18,7 @@
   <classpaths>
     <class path="C:\HaxeToolkit\haxe\lib\openfl\4,9,2" />
     <class path="C:\HaxeToolkit\haxe\lib\lime\4,0,3" />
-    <class path="..\2_extensions\1_mine\RayToast" />
+    <class path="..\2_extensions\1_mine\AnCam" />
     <class path="Source" />
     <class path="C:\HaxeToolkit\haxe\lib\openfl\4,9,2\externs\core\openfl" />
     <class path="C:\HaxeToolkit\haxe\lib\openfl\4,9,2\externs\extras" />

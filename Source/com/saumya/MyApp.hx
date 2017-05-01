@@ -2,10 +2,18 @@ package com.saumya;
 
 import com.saumya.utils.AppBg;
 import openfl.display.Graphics;
+import openfl.display.Loader;
 import openfl.display.Shape;
 import openfl.display.Sprite;
+import openfl.net.URLLoader;
+import openfl.net.URLRequest;
 
+import openfl.events.Event;
 import openfl.events.MouseEvent;
+import openfl.events.ErrorEvent;
+import openfl.events.ProgressEvent;
+
+import lime.system.System;
 
 /**
  * Application Entry
@@ -42,9 +50,33 @@ class MyApp extends Sprite
 		//SetBrightness.testToast(2);
 		//RayToast.testToast();
 		
+		/*
 		//RayToast.toastMessage( "Hello from OpenFL : "+ Date.now() );
 		var s:String = RayToast.sendAndGetBackMessage( "Hello from OpenFL : " + Date.now() );
 		trace('Returned Message :'+s);
+		*/
+		
+		//AnCam.startCamera();
+		
+		trace( ":userDirectory:"+System.userDirectory.toString());
+		trace( ":applicationStorageDirectory:"+System.applicationStorageDirectory.toString() );
+		//trace( ":applicationDirectory:"+System.applicationDirectory.toString() );
+		trace( ":documentsDirectory:" + System.documentsDirectory.toString() );
+		
+		var sCamImage:String = System.userDirectory + 'example.jpg';
+		trace('image:' + sCamImage);
+		
+		var r:URLRequest = new URLRequest(sCamImage);
+		var loaderImage:Loader = new Loader();
+		//loaderImage.content.width = 300;
+		//loaderImage.content.height = 400;
+		addChild(loaderImage);
+		
+		loaderImage.contentLoaderInfo.addEventListener(Event.COMPLETE, function(evtObj){ trace('Loaded'); });
+		loaderImage.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS, function(evtObj){ trace('Loading Progress'); });
+		loaderImage.contentLoaderInfo.addEventListener(ErrorEvent.ERROR, function(errorObj){ trace( 'ERROR' ); });
+		
+		loaderImage.load(r);
 	}
 	
 }

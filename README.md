@@ -25,6 +25,7 @@ lime rebuild MyExtension android
 <include path="ext/SetBrightness" />
 <include path="ext/MyExtension" />
 ```
+The paths above can be relative to the project folder that uses the extension. That means extensions can be stored anywhere in the computer.
 
 ### Notes
 

@@ -57,11 +57,10 @@ class MyApp extends Sprite
 		trace('Returned Message :'+s);
 		*/
 		
-		// Take picture from camera
+		//Take picture from camera
 		AnCam.startCamera();
 		//End
 	}
-	// This is the callback from the Native Extension
 	private function onCamCaptured(e:Event):Void{
 		trace('MyApp : onCamCaptured : ');
 		loadTheCapturedImage();

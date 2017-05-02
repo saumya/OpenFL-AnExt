@@ -2,8 +2,9 @@ OpenFL Android Extension Experiment
 ===================================
  Uses [RayToast][4] for displaying toast messages on Android.
 
-Android Extension [Tutorial][2] reference
-
+ - Android Extension [Tutorial][2] reference
+ - [Sending Data back from Native Code to Haxe][5]
+ 
 ### Extension writing
  
  Here are the steps to make an Android Extension
@@ -48,4 +49,5 @@ OpenFL [commands are a frontend][1] for Lime Commands. So all Lime commands can 
 [2]: https://player03.com/2014/08/09/openfl-extensions/
 [3]: https://docs.oracle.com/javase/7/docs/technotes/guides/jni/spec/types.html
 [4]: https://github.com/saumya/RayToast
+[5]: http://www.stencyl.com/help/viewPrint/229
  

@@ -56,7 +56,9 @@ class MyApp extends Sprite
 		trace('Returned Message :'+s);
 		*/
 		
-		//AnCam.startCamera();
+		trace("==================== BEFORE ================== start Camera=================");
+		AnCam.startCamera();
+		trace("==================== AFTER ================== start Camera==================");
 		
 		trace( ":userDirectory:"+System.userDirectory.toString());
 		trace( ":applicationStorageDirectory:"+System.applicationStorageDirectory.toString() );

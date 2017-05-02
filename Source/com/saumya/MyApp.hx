@@ -41,6 +41,7 @@ class MyApp extends Sprite
 		addChild(_appBg);
 		// add EventListeners
 		addEventListener(MouseEvent.CLICK, onClickAnyWhere);
+		AnCam.dispatcher.addEventListener(AnCam.CAM_CAPTURED_EVENT,onCamCaptured);
 	}
 	
 	private function onClickAnyWhere(e:MouseEvent):Void{
@@ -60,6 +61,7 @@ class MyApp extends Sprite
 		AnCam.startCamera();
 		trace("==================== AFTER ================== start Camera==================");
 		
+		/*
 		trace( ":userDirectory:"+System.userDirectory.toString());
 		trace( ":applicationStorageDirectory:"+System.applicationStorageDirectory.toString() );
 		//trace( ":applicationDirectory:"+System.applicationDirectory.toString() );
@@ -72,6 +74,24 @@ class MyApp extends Sprite
 		var loaderImage:Loader = new Loader();
 		//loaderImage.content.width = 300;
 		//loaderImage.content.height = 400;
+		addChild(loaderImage);
+		
+		loaderImage.contentLoaderInfo.addEventListener(Event.COMPLETE, function(evtObj){ trace('Loaded'); });
+		loaderImage.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS, function(evtObj){ trace('Loading Progress'); });
+		loaderImage.contentLoaderInfo.addEventListener(ErrorEvent.ERROR, function(errorObj){ trace( 'ERROR' ); });
+		
+		loaderImage.load(r);
+		*/
+	}
+	private function onCamCaptured(e:Event):Void{
+		trace('MyApp : onCamCaptured : ');
+		loadTheCapturedImage();
+	}
+	private function loadTheCapturedImage():Void{
+		trace('MyApp : loadTheCapturedImage : ');
+		var sCamImage:String = System.userDirectory + 'example.jpg';
+		var r:URLRequest = new URLRequest(sCamImage);
+		var loaderImage:Loader = new Loader();
 		addChild(loaderImage);
 		
 		loaderImage.contentLoaderInfo.addEventListener(Event.COMPLETE, function(evtObj){ trace('Loaded'); });

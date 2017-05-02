@@ -61,6 +61,7 @@ class MyApp extends Sprite
 		AnCam.startCamera();
 		//End
 	}
+	// This is the callback from the Native Extension
 	private function onCamCaptured(e:Event):Void{
 		trace('MyApp : onCamCaptured : ');
 		loadTheCapturedImage();

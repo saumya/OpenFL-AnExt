@@ -57,31 +57,9 @@ class MyApp extends Sprite
 		trace('Returned Message :'+s);
 		*/
 		
-		trace("==================== BEFORE ================== start Camera=================");
+		// Take picture from camera
 		AnCam.startCamera();
-		trace("==================== AFTER ================== start Camera==================");
-		
-		/*
-		trace( ":userDirectory:"+System.userDirectory.toString());
-		trace( ":applicationStorageDirectory:"+System.applicationStorageDirectory.toString() );
-		//trace( ":applicationDirectory:"+System.applicationDirectory.toString() );
-		trace( ":documentsDirectory:" + System.documentsDirectory.toString() );
-		
-		var sCamImage:String = System.userDirectory + 'example.jpg';
-		trace('image:' + sCamImage);
-		
-		var r:URLRequest = new URLRequest(sCamImage);
-		var loaderImage:Loader = new Loader();
-		//loaderImage.content.width = 300;
-		//loaderImage.content.height = 400;
-		addChild(loaderImage);
-		
-		loaderImage.contentLoaderInfo.addEventListener(Event.COMPLETE, function(evtObj){ trace('Loaded'); });
-		loaderImage.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS, function(evtObj){ trace('Loading Progress'); });
-		loaderImage.contentLoaderInfo.addEventListener(ErrorEvent.ERROR, function(errorObj){ trace( 'ERROR' ); });
-		
-		loaderImage.load(r);
-		*/
+		//End
 	}
 	private function onCamCaptured(e:Event):Void{
 		trace('MyApp : onCamCaptured : ');

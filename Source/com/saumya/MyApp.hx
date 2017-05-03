@@ -3,6 +3,7 @@ package com.saumya;
 import com.saumya.utils.AppBg;
 import openfl.display.Graphics;
 import openfl.display.Loader;
+import openfl.display.LoaderInfo;
 import openfl.display.Shape;
 import openfl.display.Sprite;
 import openfl.net.URLLoader;
@@ -26,6 +27,8 @@ class MyApp extends Sprite
 	private var _appBg:Shape;
 	
 	private var _utilAppBg:AppBg;
+	
+	private var imageName:String;
 	
 	public function new(w:Float,h:Float) 
 	{
@@ -58,7 +61,10 @@ class MyApp extends Sprite
 		*/
 		
 		//Take picture from camera
-		AnCam.startCamera();
+		//AnCam.startCamera();
+		
+		this.imageName = Date.now().toString();
+		AnCam.captureImageAs(this.imageName);
 		//End
 	}
 	private function onCamCaptured(e:Event):Void{
@@ -67,16 +73,40 @@ class MyApp extends Sprite
 	}
 	private function loadTheCapturedImage():Void{
 		trace('MyApp : loadTheCapturedImage : ');
-		var sCamImage:String = System.userDirectory + 'example.jpg';
+		var sCamImage:String = System.userDirectory + this.imageName +'.jpg';
 		var r:URLRequest = new URLRequest(sCamImage);
 		var loaderImage:Loader = new Loader();
-		addChild(loaderImage);
+		//addChild(loaderImage);
 		
-		loaderImage.contentLoaderInfo.addEventListener(Event.COMPLETE, function(evtObj){ trace('Loaded'); });
+		loaderImage.contentLoaderInfo.addEventListener(Event.COMPLETE, onImageLoadComplete );
 		loaderImage.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS, function(evtObj){ trace('Loading Progress'); });
 		loaderImage.contentLoaderInfo.addEventListener(ErrorEvent.ERROR, function(errorObj){ trace( 'ERROR' ); });
 		
 		loaderImage.load(r);
+	}
+	private function onImageLoadComplete(event:Event):Void{
+		trace('onImageLoadComplete');
+		trace(event.target);
+		
+		//var loaderInfo:LoaderInfo = LoaderInfo(event.target);
+		//var img = loaderInfo.content;
+		//trace(event.target.content);
+		
+		var loaderInfo:LoaderInfo = cast(event.target, LoaderInfo);
+		var img = loaderInfo.content;
+		img.width = stage.stageWidth;
+		img.height = stage.stageHeight;
+		addChild(img);
+		
+		//var img:Loader = evt.currentTarget.loader as Loader;
+		//addChild(img);
+		/*
+		var loader:Loader =  Loader(event.target.loader);
+		var info:LoaderInfo = LoaderInfo(loader.contentLoaderInfo);
+		
+		var img = loader.content;
+		addChild(img);
+		*/
 	}
 	
 }

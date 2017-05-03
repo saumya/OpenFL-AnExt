@@ -94,8 +94,10 @@ class MyApp extends Sprite
 		
 		var loaderInfo:LoaderInfo = cast(event.target, LoaderInfo);
 		var img = loaderInfo.content;
-		img.width = stage.stageWidth;
-		img.height = stage.stageHeight;
+		//img.width = stage.stageWidth;
+		//img.height = stage.stageHeight;
+		img.scaleX = img.scaleY = 0.2;
+		img.x = img.y = 10;
 		addChild(img);
 		
 		//var img:Loader = evt.currentTarget.loader as Loader;

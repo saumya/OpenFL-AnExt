@@ -31,6 +31,7 @@ class MyApp extends Sprite
 	private var _utilAppBg:AppBg;
 	
 	private var imageName:String;
+	private var _imageHolder:Sprite;
 	
 	//UI Elements
 	private var _btnCamera:ButtonWithBgColor;
@@ -48,6 +49,8 @@ class MyApp extends Sprite
 	public function init():Void{
 		_appBg = _utilAppBg.getBgShape(_parentWidth, _parentHeight, 0x00FF00);
 		addChild(_appBg);
+		_imageHolder = new Sprite();
+		addChild(_imageHolder);
 		// UI
 		_btnCamera = new ButtonWithBgColor("Take Photo",40);
 		_btnLaunch = new ButtonWithBgColor("Launch Bleep App", 40);
@@ -59,7 +62,7 @@ class MyApp extends Sprite
 		addChild(_btnCamera);
 		addChild(_btnLaunch);
 		// add EventListeners
-		//addEventListener(MouseEvent.CLICK, onClickAnyWhere);
+		addEventListener(MouseEvent.CLICK, onClickAnyWhere);
 		_btnCamera.addEventListener(MouseEvent.CLICK, onTapCamera);
 		_btnLaunch.addEventListener(MouseEvent.CLICK, onTapLaunch);
 		AnCam.dispatcher.addEventListener(AnCam.CAM_CAPTURED_EVENT, onCamCaptured);
@@ -130,7 +133,8 @@ class MyApp extends Sprite
 		//img.height = stage.stageHeight;
 		img.scaleX = img.scaleY = 0.2;
 		img.x = img.y = 10;
-		addChild(img);
+		//addChild(img);
+		_imageHolder.addChild(img);
 		
 		//var img:Loader = evt.currentTarget.loader as Loader;
 		//addChild(img);

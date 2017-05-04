@@ -13,13 +13,16 @@
 	-->
 	<!--<include path="../2_extensions/1_mine/RayToast" />-->
 	<include path="../2_extensions/1_mine/AnCam" />
+	<include path="../2_extensions/1_mine/AnAppLaunch" />
 	
 	
 	
 	<source path="Source" />
 	
 	<haxelib name="openfl" />
+	<haxelib name="raymp" />
 	
 	<assets path="Assets" rename="assets" />
+	<assets path="Assets/fonts" rename="fonts" include="*.ttf" />
 	
 </project>

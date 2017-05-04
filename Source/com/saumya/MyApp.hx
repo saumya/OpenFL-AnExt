@@ -1,6 +1,8 @@
 package com.saumya;
 
+import com.saumya.raymp.components.ButtonWithBgColor;
 import com.saumya.utils.AppBg;
+
 import openfl.display.Graphics;
 import openfl.display.Loader;
 import openfl.display.LoaderInfo;
@@ -30,6 +32,10 @@ class MyApp extends Sprite
 	
 	private var imageName:String;
 	
+	//UI Elements
+	private var _btnCamera:ButtonWithBgColor;
+	private var _btnLaunch:ButtonWithBgColor;
+	
 	public function new(w:Float,h:Float) 
 	{
 		super();
@@ -42,14 +48,37 @@ class MyApp extends Sprite
 	public function init():Void{
 		_appBg = _utilAppBg.getBgShape(_parentWidth, _parentHeight, 0x00FF00);
 		addChild(_appBg);
+		// UI
+		_btnCamera = new ButtonWithBgColor("Take Photo",40);
+		_btnLaunch = new ButtonWithBgColor("Launch Bleep App", 40);
+		
+		_btnCamera.x = _btnCamera.y = 20;
+		_btnLaunch.x = 20;
+		_btnLaunch.y = _btnCamera.y + _btnCamera.height + 40;
+		
+		addChild(_btnCamera);
+		addChild(_btnLaunch);
 		// add EventListeners
-		addEventListener(MouseEvent.CLICK, onClickAnyWhere);
-		AnCam.dispatcher.addEventListener(AnCam.CAM_CAPTURED_EVENT,onCamCaptured);
+		//addEventListener(MouseEvent.CLICK, onClickAnyWhere);
+		_btnCamera.addEventListener(MouseEvent.CLICK, onTapCamera);
+		_btnLaunch.addEventListener(MouseEvent.CLICK, onTapLaunch);
+		AnCam.dispatcher.addEventListener(AnCam.CAM_CAPTURED_EVENT, onCamCaptured);
+		//
 	}
 	
+	private function onTapCamera(e:MouseEvent):Void{
+		this.imageName = Date.now().toString();
+		AnCam.captureImageAs(this.imageName);
+	}
+	private function onTapLaunch(e:MouseEvent):Void{
+		trace('onTapLaunch');
+		AnAppLaunch.launchAppWithPackageName("com.bittorrent.chat");
+	}
+	
+	// Random Color change
 	private function onClickAnyWhere(e:MouseEvent):Void{
 		// change the color of BG
-		//_utilAppBg.changeColorOfShape(this._appBg, Math.round( Math.random() * (256 * 256 * 256) ));
+		_utilAppBg.changeColorOfShape(this._appBg, Math.round( Math.random() * (256 * 256 * 256) ));
 		
 		//SetBrightness.setBrightness(0.5);
 		//SetBrightness.testToast(2);
@@ -64,8 +93,10 @@ class MyApp extends Sprite
 		//Take picture from camera
 		//AnCam.startCamera();
 		
+		/*
 		this.imageName = Date.now().toString();
 		AnCam.captureImageAs(this.imageName);
+		*/
 		//End
 	}
 	private function onCamCaptured(e:Event):Void{

@@ -48,7 +48,8 @@ class MyApp extends Sprite
 	}
 	
 	private function onClickAnyWhere(e:MouseEvent):Void{
-		_utilAppBg.changeColorOfShape(this._appBg, Math.round( Math.random() * (256 * 256 * 256) ));
+		// change the color of BG
+		//_utilAppBg.changeColorOfShape(this._appBg, Math.round( Math.random() * (256 * 256 * 256) ));
 		
 		//SetBrightness.setBrightness(0.5);
 		//SetBrightness.testToast(2);

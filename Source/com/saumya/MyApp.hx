@@ -13,8 +13,10 @@ import openfl.net.URLRequest;
 
 import openfl.events.Event;
 import openfl.events.MouseEvent;
+import openfl.events.KeyboardEvent;
 import openfl.events.ErrorEvent;
 import openfl.events.ProgressEvent;
+import lime.ui.KeyCode;
 
 import lime.system.System;
 
@@ -36,6 +38,9 @@ class MyApp extends Sprite
 	//UI Elements
 	private var _btnCamera:ButtonWithBgColor;
 	private var _btnLaunch:ButtonWithBgColor;
+	private var _btnWebView:ButtonWithBgColor;
+	//
+	private var exitCounter:Int;
 	
 	public function new(w:Float,h:Float) 
 	{
@@ -43,6 +48,13 @@ class MyApp extends Sprite
 		_parentWidth = w;
 		_parentHeight = h;
 		_utilAppBg = new AppBg();
+		
+		this.addEventListener(Event.ADDED_TO_STAGE,onTheStage);
+		//init();
+	}
+	private function onTheStage(e:Event):Void{
+		e.preventDefault();
+		this.removeEventListener(Event.ADDED_TO_STAGE,onTheStage);
 		init();
 	}
 	
@@ -54,17 +66,23 @@ class MyApp extends Sprite
 		// UI
 		_btnCamera = new ButtonWithBgColor("Take Photo",40);
 		_btnLaunch = new ButtonWithBgColor("Launch Bleep App", 40);
+		_btnWebView = new ButtonWithBgColor("Launch Web OpenFL", 40);
 		
 		_btnCamera.x = _btnCamera.y = 20;
 		_btnLaunch.x = 20;
 		_btnLaunch.y = _btnCamera.y + _btnCamera.height + 40;
+		_btnWebView.x = 20;
+		_btnWebView.y = _btnLaunch.y + _btnLaunch.height + 40;
 		
 		addChild(_btnCamera);
 		addChild(_btnLaunch);
+		addChild(_btnWebView);
 		// add EventListeners
 		addEventListener(MouseEvent.CLICK, onClickAnyWhere);
+		//this.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
 		_btnCamera.addEventListener(MouseEvent.CLICK, onTapCamera);
 		_btnLaunch.addEventListener(MouseEvent.CLICK, onTapLaunch);
+		_btnWebView.addEventListener(MouseEvent.CLICK, onTapWeb);
 		AnCam.dispatcher.addEventListener(AnCam.CAM_CAPTURED_EVENT, onCamCaptured);
 		//
 	}
@@ -74,10 +92,33 @@ class MyApp extends Sprite
 		AnCam.captureImageAs(this.imageName);
 	}
 	private function onTapLaunch(e:MouseEvent):Void{
-		trace('onTapLaunch');
+		//trace('onTapLaunch');
 		AnAppLaunch.launchAppWithPackageName("com.bittorrent.chat");
 	}
+	private function onTapWeb(e:MouseEvent):Void{
+		//WebView
+		AnWebView.open("http://saumya.github.io/");
+		//Browser
+		//AnWebView.open("http://www.openfl.org/",true);
+	}
 	
+	// Checking for back button
+	private function onKeyUp(e:KeyboardEvent){
+		//trace('onKeyUp:' + e.keyCode);
+		//trace('APP_CONTROL_BACK:' + KeyCode.APP_CONTROL_BACK);
+		//e.preventDefault();
+		switch(e.keyCode){
+			case KeyCode.APP_CONTROL_BACK:
+				if (exitCounter >= 3){
+					// Exit after 3 TAPs on BACK button
+					// Exit the Application. Default behaviour of Android.
+				}else{
+					e.preventDefault();
+					trace('============ BACK ===========');
+				}
+		}
+		
+	}
 	// Random Color change
 	private function onClickAnyWhere(e:MouseEvent):Void{
 		// change the color of BG

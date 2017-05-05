@@ -39,6 +39,7 @@ class MyApp extends Sprite
 	private var _btnCamera:ButtonWithBgColor;
 	private var _btnLaunch:ButtonWithBgColor;
 	private var _btnWebView:ButtonWithBgColor;
+	private var _btnCall:ButtonWithBgColor;
 	//
 	private var exitCounter:Int;
 	
@@ -66,23 +67,28 @@ class MyApp extends Sprite
 		// UI
 		_btnCamera = new ButtonWithBgColor("Take Photo",40);
 		_btnLaunch = new ButtonWithBgColor("Launch Bleep App", 40);
-		_btnWebView = new ButtonWithBgColor("Launch Web OpenFL", 40);
+		_btnWebView = new ButtonWithBgColor("Launch Web Saumya", 40);
+		_btnCall = new ButtonWithBgColor("Call A Number", 40);
 		
 		_btnCamera.x = _btnCamera.y = 20;
 		_btnLaunch.x = 20;
 		_btnLaunch.y = _btnCamera.y + _btnCamera.height + 40;
 		_btnWebView.x = 20;
 		_btnWebView.y = _btnLaunch.y + _btnLaunch.height + 40;
+		_btnCall.x = 20;
+		_btnCall.y = _btnWebView.y + _btnWebView.height + 40;
 		
 		addChild(_btnCamera);
 		addChild(_btnLaunch);
 		addChild(_btnWebView);
+		addChild(_btnCall);
 		// add EventListeners
 		addEventListener(MouseEvent.CLICK, onClickAnyWhere);
 		//this.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
 		_btnCamera.addEventListener(MouseEvent.CLICK, onTapCamera);
 		_btnLaunch.addEventListener(MouseEvent.CLICK, onTapLaunch);
 		_btnWebView.addEventListener(MouseEvent.CLICK, onTapWeb);
+		_btnCall.addEventListener(MouseEvent.CLICK, onTapCall);
 		AnCam.dispatcher.addEventListener(AnCam.CAM_CAPTURED_EVENT, onCamCaptured);
 		//
 	}
@@ -100,6 +106,11 @@ class MyApp extends Sprite
 		AnWebView.open("http://saumya.github.io/");
 		//Browser
 		//AnWebView.open("http://www.openfl.org/",true);
+	}
+	private function onTapCall(e:MouseEvent):Void{
+		// Not sure why! Passing an INT provides Float and throws error
+		// For the time being, we are passing String
+		AnCall.callNum("08446992711");
 	}
 	
 	// Checking for back button

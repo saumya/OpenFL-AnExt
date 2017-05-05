@@ -15,6 +15,7 @@
 	<include path="../2_extensions/1_mine/AnCam" />
 	<include path="../2_extensions/1_mine/AnAppLaunch" />
 	<include path="../2_extensions/1_mine/AnWebView" />
+	<include path="../2_extensions/1_mine/AnCall" />
 	
 	
 	

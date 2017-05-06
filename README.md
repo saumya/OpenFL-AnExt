@@ -39,7 +39,7 @@ The paths above can be relative to the project folder that uses the extension. T
 
 The JNI [short code reference][3]
 
- Lime	 `lime create openfl project MyProject`
+ Lime	 `lime create openfl project MyProject`          
  OpenFL	 `openfl create project MyProject` 
  
  For writing extensions `lime create extension SetBrightness` 

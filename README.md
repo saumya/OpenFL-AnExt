@@ -28,7 +28,7 @@ lime rebuild MyExtension android
 ```
 The paths above can be relative to the project folder that uses the extension. That means extensions can be stored anywhere in the computer.
 
-### Other extensions
+### My extensions
  - [AnCam][a1]
  - [RayToast][a2]
  - [AnWebView][a3]

@@ -94,23 +94,30 @@ class MyApp extends Sprite
 	}
 	
 	private function onTapCamera(e:MouseEvent):Void{
+		
 		this.imageName = Date.now().toString();
 		AnCam.captureImageAs(this.imageName);
+		
 	}
 	private function onTapLaunch(e:MouseEvent):Void{
-		//trace('onTapLaunch');
+		
 		AnAppLaunch.launchAppWithPackageName("com.bittorrent.chat");
+		
 	}
 	private function onTapWeb(e:MouseEvent):Void{
+		trace('onTapWeb');
 		//WebView
 		AnWebView.open("http://saumya.github.io/");
 		//Browser
 		//AnWebView.open("http://www.openfl.org/",true);
+		
 	}
 	private function onTapCall(e:MouseEvent):Void{
+		
 		// Not sure why! Passing an INT provides Float and throws error
 		// For the time being, we are passing String
 		AnCall.callNum("08446992711");
+		
 	}
 	
 	// Checking for back button

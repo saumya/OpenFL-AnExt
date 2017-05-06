@@ -28,6 +28,13 @@ lime rebuild MyExtension android
 ```
 The paths above can be relative to the project folder that uses the extension. That means extensions can be stored anywhere in the computer.
 
+### Other extensions
+ - [AnCam][a1]
+ - [RayToast][a2]
+ - [AnWebView][a3]
+ - [AnAppLaunch][a4]
+ - [AnCall][a5]
+ 
 ### Notes
 
 The JNI [short code reference][3]
@@ -50,4 +57,11 @@ OpenFL [commands are a frontend][1] for Lime Commands. So all Lime commands can 
 [3]: https://docs.oracle.com/javase/7/docs/technotes/guides/jni/spec/types.html
 [4]: https://github.com/saumya/RayToast
 [5]: http://www.stencyl.com/help/viewPrint/229
+	
+[ExampleImp]: https://github.com/saumya/OpenFL-AnExt
+[a1]: https://github.com/saumya/AnCam
+[a2]: https://github.com/saumya/RayToast
+[a3]: https://github.com/saumya/AnWebView
+[a4]: https://github.com/saumya/AnAppLaunch
+[a5]: https://github.com/saumya/AnCall
  

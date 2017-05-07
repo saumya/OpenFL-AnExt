@@ -27,13 +27,6 @@ lime rebuild MyExtension android
 <include path="ext/MyExtension" />
 ```
 The paths above can be relative to the project folder that uses the extension. That means extensions can be stored anywhere in the computer.
-
-### My extensions
- - [AnCam][a1]
- - [RayToast][a2]
- - [AnWebView][a3]
- - [AnAppLaunch][a4]
- - [AnCall][a5]
  
 ### Notes
 
@@ -47,6 +40,12 @@ The JNI [short code reference][3]
 OpenFL [commands are a frontend][1] for Lime Commands. So all Lime commands can be called from OpenFL commands.
 
 
+## My extensions
+ - [AnCam][a1]
+ - [RayToast][a2]
+ - [AnWebView][a3]
+ - [AnAppLaunch][a4]
+ - [AnCall][a5]
 
 
 

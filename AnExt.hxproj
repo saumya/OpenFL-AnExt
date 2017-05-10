@@ -20,11 +20,6 @@
     <class path="C:\HaxeToolkit\haxe\lib\raymp\1,0,1\src" />
     <class path="C:\HaxeToolkit\haxe\lib\actuate\1,8,7" />
     <class path="C:\HaxeToolkit\haxe\lib\openfl\5,0,0" />
-    <class path="..\2_extensions\1_mine\RayToast" />
-    <class path="..\2_extensions\1_mine\AnCam" />
-    <class path="..\2_extensions\1_mine\AnAppLaunch" />
-    <class path="..\2_extensions\1_mine\AnWebView" />
-    <class path="..\2_extensions\1_mine\AnCall" />
     <class path="Source" />
     <class path="C:\HaxeToolkit\haxe\lib\openfl\5,0,0\externs\core\openfl" />
     <class path="C:\HaxeToolkit\haxe\lib\openfl\5,0,0\externs\extras" />

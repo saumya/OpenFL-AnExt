@@ -85,14 +85,16 @@ class MyApp extends Sprite
 		// add EventListeners
 		addEventListener(MouseEvent.CLICK, onClickAnyWhere);
 		//this.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
+		/*
 		_btnCamera.addEventListener(MouseEvent.CLICK, onTapCamera);
 		_btnLaunch.addEventListener(MouseEvent.CLICK, onTapLaunch);
 		_btnWebView.addEventListener(MouseEvent.CLICK, onTapWeb);
 		_btnCall.addEventListener(MouseEvent.CLICK, onTapCall);
 		AnCam.dispatcher.addEventListener(AnCam.CAM_CAPTURED_EVENT, onCamCaptured);
+		*/
 		//
 	}
-	
+	/*
 	private function onTapCamera(e:MouseEvent):Void{
 		
 		this.imageName = Date.now().toString();
@@ -119,7 +121,8 @@ class MyApp extends Sprite
 		AnCall.callNum("08446992711");
 		
 	}
-	
+	*/
+	/*
 	// Checking for back button
 	private function onKeyUp(e:KeyboardEvent){
 		//trace('onKeyUp:' + e.keyCode);
@@ -137,6 +140,7 @@ class MyApp extends Sprite
 		}
 		
 	}
+	*/
 	// Random Color change
 	private function onClickAnyWhere(e:MouseEvent):Void{
 		// change the color of BG
@@ -146,21 +150,11 @@ class MyApp extends Sprite
 		//SetBrightness.testToast(2);
 		//RayToast.testToast();
 		
-		/*
 		//RayToast.toastMessage( "Hello from OpenFL : "+ Date.now() );
-		var s:String = RayToast.sendAndGetBackMessage( "Hello from OpenFL : " + Date.now() );
-		trace('Returned Message :'+s);
-		*/
+		//var s:String = RayToast.sendAndGetBackMessage( "Hello from OpenFL : " + Date.now() );
 		
-		//Take picture from camera
-		//AnCam.startCamera();
-		
-		/*
-		this.imageName = Date.now().toString();
-		AnCam.captureImageAs(this.imageName);
-		*/
-		//End
 	}
+	/*
 	private function onCamCaptured(e:Event):Void{
 		trace('MyApp : onCamCaptured : ');
 		loadTheCapturedImage();
@@ -180,30 +174,12 @@ class MyApp extends Sprite
 	}
 	private function onImageLoadComplete(event:Event):Void{
 		trace('onImageLoadComplete');
-		trace(event.target);
-		
-		//var loaderInfo:LoaderInfo = LoaderInfo(event.target);
-		//var img = loaderInfo.content;
-		//trace(event.target.content);
-		
+		//trace(event.target);
 		var loaderInfo:LoaderInfo = cast(event.target, LoaderInfo);
 		var img = loaderInfo.content;
-		//img.width = stage.stageWidth;
-		//img.height = stage.stageHeight;
 		img.scaleX = img.scaleY = 0.2;
 		img.x = img.y = 10;
-		//addChild(img);
 		_imageHolder.addChild(img);
-		
-		//var img:Loader = evt.currentTarget.loader as Loader;
-		//addChild(img);
-		/*
-		var loader:Loader =  Loader(event.target.loader);
-		var info:LoaderInfo = LoaderInfo(loader.contentLoaderInfo);
-		
-		var img = loader.content;
-		addChild(img);
-		*/
 	}
-	
+	*/
 }

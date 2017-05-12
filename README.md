@@ -1,6 +1,5 @@
 OpenFL Android Extension Experiment
 ===================================
- Uses [RayToast][4] for displaying toast messages on Android.
 
  - Android Extension [Tutorial][2] reference
  - [Sending Data back from Native Code to Haxe][5]
